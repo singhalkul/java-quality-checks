@@ -1,0 +1,57 @@
+import com.github.spotbugs.SpotBugsTask
+
+plugins {
+    id 'java'
+    id 'jacoco'
+    id 'checkstyle'
+    id 'pmd'
+    id "com.github.spotbugs" version "3.0.0"
+    id 'de.aaschmid.cpd' version '3.1'
+}
+
+group = 'com.qualitychecks'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+}
+
+sourceSets {
+    integrationTest {
+        java {
+            compileClasspath += main.output + test.output
+            runtimeClasspath += main.output + test.output
+        }
+        resources.srcDir 'integrationTest/resources'
+    }
+}
+
+configurations {
+    integrationTestImplementation.extendsFrom testImplementation
+    integrationTestRuntime.extendsFrom testRuntime
+}
+
+test {
+    useJUnitPlatform()
+}
+
+task integrationTest(type: Test) {
+    description = 'Runs integration tests.'
+    group = 'verification'
+
+    testClassesDirs = sourceSets.integrationTest.output.classesDirs
+    classpath = sourceSets.integrationTest.runtimeClasspath
+    useJUnitPlatform()
+}
+
+apply from: 'gradle/checkstyle.gradle'
+apply from: 'gradle/jacoco.gradle'
+apply from: 'gradle/pmd.gradle'
+apply from: 'gradle/spotbugs.gradle'
+
+integrationTest.dependsOn test
+jacocoTestCoverageVerification.dependsOn jacocoTestReport
+check.dependsOn(cpdCheck, pmdMain, jacocoTestCoverageVerification, integrationTest)

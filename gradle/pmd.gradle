@@ -1,0 +1,19 @@
+pmd {
+    toolVersion = '6.21.0'
+    ruleSetFiles = files("config/pmd/ruleSet.xml")
+    ruleSets=[]
+    sourceSets = [sourceSets.main]
+}
+
+cpd {
+    toolVersion = '6.21.0'
+    minimumTokenCount = 40
+}
+
+cpdCheck {
+    reports {
+        text.enabled = true
+        xml.enabled = false
+    }
+    source = sourceSets.main.allJava
+}

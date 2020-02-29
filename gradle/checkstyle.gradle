@@ -1,0 +1,19 @@
+checkstyle {
+    toolVersion = 8.29
+    ignoreFailures = false
+
+    checkstyleMain {
+        configFile = file("$rootDir/config/checkstyle/checkstyle.xml")
+    }
+
+    checkstyleTest {
+        configFile = file("$rootDir/config/checkstyle/checkstyleTest.xml")
+    }
+}
+
+tasks.withType(Checkstyle) {
+    reports {
+        xml.enabled false
+        html.enabled true
+    }
+}
