@@ -9,6 +9,11 @@ jacocoTestReport {
         csv.enabled false
         html.destination file("${buildDir}/jacocoHtml")
     }
+    afterEvaluate {
+        classDirectories.setFrom(files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: ['com/qualitychecks/service/**'])
+        })) //excluding the service as it is integration test
+    }
 }
 
 jacocoTestCoverageVerification {
@@ -18,5 +23,10 @@ jacocoTestCoverageVerification {
                 minimum = 0.95
             }
         }
+    }
+    afterEvaluate {
+        classDirectories.setFrom(files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: ['com/qualitychecks/service/**'])
+        })) //excluding the service as it is integration test
     }
 }

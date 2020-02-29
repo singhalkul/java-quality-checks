@@ -1,0 +1,14 @@
+Found a 10 line (46 tokens) duplication in the following files:
+Starting at line 11 of /java-quality-checks/src/main/java/com/qualitychecks/service/RectangleCalculatorService.java
+Starting at line 12 of /java-quality-checks/src/main/java/com/qualitychecks/service/CircleCalculatorService.java
+
+      System.out.println("Calculating area for rectangle");
+      BigDecimal area = shape.calculateArea();
+      System.out.println("Calculated area is " + area.toPlainString());
+      return area;
+    } catch (RuntimeException ex) {
+      ex.printStackTrace();
+      throw new RuntimeException("Some error occurred");
+    }
+  }
+}
