@@ -1,5 +1,5 @@
 # Java Quality Checks
-https://cdn-images-1.medium.com/max/1600/0*UGWgn-AMx56kiWBj.jpg
+![Code Quality](https://cdn-images-1.medium.com/max/1600/0*UGWgn-AMx56kiWBj.jpg)
 
 
 ## Tools
