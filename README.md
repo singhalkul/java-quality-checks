@@ -1,4 +1,6 @@
 # Java Quality Checks
+https://cdn-images-1.medium.com/max/1600/0*UGWgn-AMx56kiWBj.jpg
+
 
 ## Tools
 Below are some of the tools that make sure that good practices are followed for the following:
