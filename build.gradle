@@ -19,7 +19,6 @@ repositories {
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.6.0'
     testImplementation 'org.hamcrest:hamcrest-core:2.2'
-
 }
 
 sourceSets {
@@ -54,6 +53,7 @@ apply from: 'gradle/checkstyle.gradle'
 apply from: 'gradle/jacoco.gradle'
 apply from: 'gradle/pmd.gradle'
 apply from: 'gradle/spotbugs.gradle'
+apply from: 'gradle/pvsstudio.gradle'
 
 integrationTest.dependsOn test
 jacocoTestCoverageVerification.dependsOn jacocoTestReport

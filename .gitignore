@@ -34,3 +34,7 @@ out/
 logs/
 
 .java-version
+
+
+### PVS-Studio ###
+.PVS-Studio
