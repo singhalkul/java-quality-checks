@@ -75,8 +75,8 @@ Command:
 
 Gradle configuration for PVS-Studio is located in [gradle/pvsstudio.gradle](gradle/pvsstudio.gradle).
 
-Command:
-`gradle pvsAnalyze`
+Command:  
+`gradle pvsAnalyze`  
 
 Output:
 ![PVS-Studio Report](results/pvsstudioReport.png)
