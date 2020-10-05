@@ -1,0 +1,26 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url uri('http://files.viva64.com/java/pvsstudio-maven-repository/')
+        }
+    }
+    dependencies {
+        classpath group: 'com.pvsstudio',
+                  name: 'pvsstudio-gradle-plugin',
+                  version: '7.07.38241'
+    }
+}
+
+apply plugin: com.pvsstudio.PvsStudioGradlePlugin
+pvsstudio {
+    projectPath = "$projectDir"
+
+    outputType = 'html'
+    outputFile = "${project.reportsDir}/pvsstudio/report.html"
+
+    analyzeOnly = ["./src/main/java/com/qualitychecks/entity/RandomShapeFactory.java"]
+
+    username = "PVS-Studio Free"
+    serialNumber ="FREE-FREE-FREE-FREE"
+}

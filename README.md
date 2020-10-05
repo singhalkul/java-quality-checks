@@ -70,6 +70,16 @@ Gradle configuration for spotbugs is located in [gradle/spotbugs.gradle](gradle/
 Command:  
 `gradle spotBugsMain`  
 
+### PVS-Studio 
+[PVS-Studio](https://www.viva64.com/en/pvs-studio/) is a promising static code analyzer. It can detect such problems as potential null object dereference, conditional expressions that are always true or false, unreachable code, infinite recursion, comparison of objects with incompatible types, and much more. In addition, the analyzer's strength is the search for copy-paste errors that are difficult to find during code review, for example, equivalent implementation of branches in an if-then-else statement or two completely different methods, comparing a variable with itself, etc.
+
+Gradle configuration for PVS-Studio is located in [gradle/pvsstudio.gradle](gradle/pvsstudio.gradle).
+
+Command:  
+`gradle pvsAnalyze`  
+
+Output:
+![PVS-Studio Report](results/pvsstudioReport.png)
 
 ## Practices
 
