@@ -1,11 +1,9 @@
-import com.github.spotbugs.SpotBugsTask
-
 plugins {
     id 'java'
     id 'jacoco'
     id 'checkstyle'
     id 'pmd'
-    id "com.github.spotbugs" version "3.0.0"
+    id "com.github.spotbugs" version "4.5.0"
     id 'de.aaschmid.cpd' version '3.1'
 }
 
